@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "api-catolica"
+version = "0.1.0"
+description = "API para recursos e devoção católica"
+authors = ["Jadson-Jose", "jadsonjosesilva@gmail.com"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "0.104.1"
+uvicorn = {extras = ["standart"], version = "0.24.0"}
+pydantic = "2.5.0"
+sqlalchemy = "2.0.23"
+python-multipart = "0.0.6" # Para upload de forms
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "7.4.3"
+pytest-asyncio = "0.21.1"
+httpx = "0.25.1"
+pre-commit = "3.5.0"
+black = "23.11.0"
+isort = "5.12.0"
+mypy = "1.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["app/tests", "tests"]
+python_files = "test_*.py"
+python_classes = "Test"
+python_function = "test_*"
+asyncio_mode = "auto"
