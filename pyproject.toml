@@ -14,6 +14,7 @@ uvicorn = {extras = ["standart"], version = "0.24.0"}
 pydantic = "2.5.0"
 sqlalchemy = "2.0.23"
 python-multipart = "0.0.6" # Para upload de forms
+toml = "^0.10.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -33,5 +34,5 @@ build-backend = "poetry.core.masonry.api"
 testpaths = ["app/tests", "tests"]
 python_files = "test_*.py"
 python_classes = "Test"
-python_function = "test_*"
+python_functions = "test_*"
 asyncio_mode = "auto"
